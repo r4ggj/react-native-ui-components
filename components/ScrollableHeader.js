@@ -68,6 +68,14 @@ export default class ScrollableHeader extends Component {
             extrapolate: 'clamp',
         });
 
+        const headerContentTranslate = scrollY.interpolate({
+            inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
+            outputRange: [0, 0, 0],
+            extrapolate: 'clamp',
+        });
+
+
+
         return (
             <View style={styles.fill}>
                 <StatusBar
@@ -134,6 +142,13 @@ export default class ScrollableHeader extends Component {
                     ]}
                 >
                     <Text style={styles.title}>Title</Text>
+                    {/*{this.props.renderHeaderContent(this)}*/}
+                </Animated.View>
+                <Animated.View
+                    style={[
+                        styles.bar,
+                    ]}
+                >
                     {this.props.renderHeaderContent(this)}
                 </Animated.View>
             </View>
