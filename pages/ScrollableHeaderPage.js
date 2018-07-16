@@ -13,7 +13,7 @@ export default class ScrollableHeaderPage extends React.Component {
                         onPress={()=>this.props.navigation.goBack()}
                         style={{
                         position:'absolute',
-                        top:10,
+                        top:4,
                         left:10,
                     }}>
                         <Text style={{color:"#fff",fontSize:16}}>返回</Text>
